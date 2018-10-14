@@ -28,7 +28,9 @@ VALUE wrap_meachi(VALUE self,VALUE val){
 	MPI_Request *requests;
 	MPI_Status *st;
 
-	int array_size=RARRAY_LEN(self);
+	int wkSize; 
+	int array_size;
+	array_size=RARRAY_LEN(self);
 
 	MPI_Init(0,NULL);
 
@@ -36,7 +38,7 @@ VALUE wrap_meachi(VALUE self,VALUE val){
 	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &rank_size);
 
-	int wkSize = array_size > rank_size-1 ? rank_size-1 : array_size
+	wkSize = array_size > rank_size-1 ? rank_size-1 : array_size;
 
 	if(my_rank==0){
 
