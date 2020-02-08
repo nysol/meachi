@@ -6,5 +6,5 @@
 ```ruby
 rake compile
 rake build
-rake install
+sudo rake install
 ```
