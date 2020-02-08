@@ -4,5 +4,7 @@
 
 
 ```ruby
-gem 'nysol-meachi'
+rake compile
+rake build
+rake install
 ```
